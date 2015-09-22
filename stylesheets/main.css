@@ -1,0 +1,36 @@
+.job-description, .coverletter, .difference {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top; }
+
+.headline {
+  background-color: white;
+  margin: 0 0 10vh 0; }
+  .headline header {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0 0 10px; }
+
+.logo {
+  float: left; }
+
+.sidebar {
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  background-color: white;
+  left: 70%; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+.container-main {
+  width: 80%;
+  margin: 0 auto; }
+
+.container {
+  width: 50%;
+  margin: 0 40% 0 10%; }
+
+body {
+  background-color: rgba(187, 187, 187, 0.5); }

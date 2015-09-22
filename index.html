@@ -4,13 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title></title>
+    <link rel="stylesheet" href="stylesheets/main.css" title="" type="text/css" />
   </head>
   <body>
+    <nav>
+      <a href="/#/">Home</a>
+      <a href="/#/jobs">jobs</a>
+      <a href="/#/dashboard">dashboard</a>
+      <a href="/#/cover-letter">cover-letter</a>
+    </nav>
     <ng-view></ng-view>
     <script type="text/javascript" charset="utf-8" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" charset="utf-8" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" charset="utf-8" src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script type="text/javascript" charset="utf-8" src="bower_components/firebase/firebase.js"></script>
     <script type="text/javascript" charset="utf-8" src="javascripts/app.js"></script>
     <script type="text/javascript" charset="utf-8" src="javascripts/routes.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/filters.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/directives.js"></script>
     <script type="text/javascript" charset="utf-8" src="javascripts/factories.js"></script>
     <script type="text/javascript" charset="utf-8" src="javascripts/controllers.js"></script>
   </body>

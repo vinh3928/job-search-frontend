@@ -1,0 +1,16 @@
+<div class="container-main">
+  <section>
+    <input type="text" name="search" id="" value="" ng-model="search" ng-keydown="searchJob(search)">
+    <table>
+    <tr ng-repeat="job in jobList">
+        <td><img src="{{job.company.logo}}" alt="" /></td>
+        <td>
+          <h3><a href="/#/jobs/{{job.id}}">{{job.title}}</a></h3>
+          <p><span class="bold">{{job.company.name}}</span> {{job.company.tagline}}</p></td>
+        <td><p>{{job.company.location.city}}</p></td>
+        <td><p>{{job.type.name}}</p></td>
+        <td><p>{{job.post_date | shortDate}}</p></td>
+    </tr>
+    </table>
+  </section>
+</div>

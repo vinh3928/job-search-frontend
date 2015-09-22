@@ -1,0 +1,100 @@
+
+
+<div class="job-description">
+  <textarea name="text" id="" rows="8" cols="40" ng-model="JDData"></textarea>
+    <input type="submit" name="" id="" value="submit" ng-click="getDataJD(JDData)"/>
+    <input type="button" name="" id="" value="Grab Verbs" ng-click="getVerbs(JDData)"/>
+    <input type="button" name="" id="" value="Switch Verbs" ng-click="switchVerbs()"/>
+    <div ng-repeat="category in JDReturn">
+      <h2 ng-click="showTraits = !showTraits">{{category.name}}</h2>
+      <div ng-repeat="personality in category.children">
+        <div ng-repeat="traits in personality.children">
+          <h4 ng-show="showTraits" ng-click="showDetails = !showDetails">{{traits.name}}, {{traits.percentage | percentage:2}}</h4>
+          <div ng-repeat="details in traits.children">
+            <h5 ng-show="showDetails && showTraits">{{details.name}}, {{details.percentage | percentage:2}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="difference">
+  <h2 ng-click="showTraitsDiff1 = !showTraitsDiff1">{{JDReturn[0].name}}</h2>
+  <h4 ng-show="showTraitsDiff1" ng-click="showDetailsDiff1 = !showDetailsDiff1">{{JDReturn[0].children[0].children[0].name}}, {{CLReturn[0].children[0].children[0].percentage - JDReturn[0].children[0].children[0].percentage | abs | percentage : 2}}</h4>
+  <h5 ng-show="showDetailsDiff1 && showTraitsDiff1">{{JDReturn[0].children[0].children[0].children[0].name}}, {{CLReturn[0].children[0].children[0].children[0].percentage - JDReturn[0].children[0].children[0].children[0].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff1 && showTraitsDiff1">{{JDReturn[0].children[0].children[0].children[1].name}}, {{CLReturn[0].children[0].children[0].children[1].percentage - JDReturn[0].children[0].children[0].children[1].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff1 && showTraitsDiff1">{{JDReturn[0].children[0].children[0].children[2].name}}, {{CLReturn[0].children[0].children[0].children[2].percentage - JDReturn[0].children[0].children[0].children[2].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff1 && showTraitsDiff1">{{JDReturn[0].children[0].children[0].children[3].name}}, {{CLReturn[0].children[0].children[0].children[3].percentage - JDReturn[0].children[0].children[0].children[3].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff1 && showTraitsDiff1">{{JDReturn[0].children[0].children[0].children[4].name}}, {{CLReturn[0].children[0].children[0].children[4].percentage - JDReturn[0].children[0].children[0].children[4].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff1 && showTraitsDiff1">{{JDReturn[0].children[0].children[0].children[5].name}}, {{CLReturn[0].children[0].children[0].children[5].percentage - JDReturn[0].children[0].children[0].children[5].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff1 && showTraitsDiff1">{{JDReturn[0].children[0].children[0].children[0].name}}, {{CLReturn[0].children[0].children[0].children[0].percentage - JDReturn[0].children[0].children[0].children[0].percentage | abs | percentage : 2}}</h5>
+  <h4 ng-show="showTraitsDiff1" ng-click="showDetailsDiff2 = !showDetailsDiff2">{{JDReturn[0].children[0].children[1].name}}, {{CLReturn[0].children[0].children[1].percentage - JDReturn[0].children[0].children[1].percentage | abs | percentage : 2}}</h4>
+  <h5 ng-show="showDetailsDiff2 && showTraitsDiff1">{{JDReturn[0].children[0].children[1].children[0].name}}, {{CLReturn[0].children[0].children[1].children[0].percentage - JDReturn[0].children[0].children[1].children[0].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff2 && showTraitsDiff1">{{JDReturn[0].children[0].children[1].children[1].name}}, {{CLReturn[0].children[0].children[1].children[1].percentage - JDReturn[0].children[0].children[1].children[1].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff2 && showTraitsDiff1">{{JDReturn[0].children[0].children[1].children[2].name}}, {{CLReturn[0].children[0].children[1].children[2].percentage - JDReturn[0].children[0].children[1].children[2].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff2 && showTraitsDiff1">{{JDReturn[0].children[0].children[1].children[3].name}}, {{CLReturn[0].children[0].children[1].children[3].percentage - JDReturn[0].children[0].children[1].children[3].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff2 && showTraitsDiff1">{{JDReturn[0].children[0].children[1].children[4].name}}, {{CLReturn[0].children[0].children[1].children[4].percentage - JDReturn[0].children[0].children[1].children[4].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff2 && showTraitsDiff1">{{JDReturn[0].children[0].children[1].children[5].name}}, {{CLReturn[0].children[0].children[1].children[5].percentage - JDReturn[0].children[0].children[1].children[5].percentage | abs | percentage : 2}}</h5>
+  <h4 ng-show="showTraitsDiff1" ng-click="showDetailsDiff3 = !showDetailsDiff3">{{JDReturn[0].children[0].children[2].name}}, {{CLReturn[0].children[0].children[2].percentage - JDReturn[0].children[0].children[2].percentage | abs | percentage : 2}}</h4>
+  <h5 ng-show="showDetailsDiff3 && showTraitsDiff1">{{JDReturn[0].children[0].children[2].children[0].name}}, {{CLReturn[0].children[0].children[2].children[0].percentage - JDReturn[0].children[0].children[2].children[0].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff3 && showTraitsDiff1">{{JDReturn[0].children[0].children[2].children[1].name}}, {{CLReturn[0].children[0].children[2].children[1].percentage - JDReturn[0].children[0].children[2].children[1].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff3 && showTraitsDiff1">{{JDReturn[0].children[0].children[2].children[2].name}}, {{CLReturn[0].children[0].children[2].children[2].percentage - JDReturn[0].children[0].children[2].children[2].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff3 && showTraitsDiff1">{{JDReturn[0].children[0].children[2].children[3].name}}, {{CLReturn[0].children[0].children[2].children[3].percentage - JDReturn[0].children[0].children[2].children[3].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff3 && showTraitsDiff1">{{JDReturn[0].children[0].children[2].children[4].name}}, {{CLReturn[0].children[0].children[2].children[4].percentage - JDReturn[0].children[0].children[2].children[4].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff3 && showTraitsDiff1">{{JDReturn[0].children[0].children[2].children[5].name}}, {{CLReturn[0].children[0].children[2].children[5].percentage - JDReturn[0].children[0].children[2].children[5].percentage | abs | percentage : 2}}</h5>
+  <h4 ng-show="showTraitsDiff1" ng-click="showDetailsDiff4 = !showDetailsDiff4">{{JDReturn[0].children[0].children[3].name}}, {{CLReturn[0].children[0].children[3].percentage - JDReturn[0].children[0].children[3].percentage | abs | percentage : 2}}</h4>
+  <h5 ng-show="showDetailsDiff4 && showTraitsDiff1">{{JDReturn[0].children[0].children[3].children[0].name}}, {{CLReturn[0].children[0].children[3].children[0].percentage - JDReturn[0].children[0].children[3].children[0].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff4 && showTraitsDiff1">{{JDReturn[0].children[0].children[3].children[1].name}}, {{CLReturn[0].children[0].children[3].children[1].percentage - JDReturn[0].children[0].children[3].children[1].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff4 && showTraitsDiff1">{{JDReturn[0].children[0].children[3].children[2].name}}, {{CLReturn[0].children[0].children[3].children[2].percentage - JDReturn[0].children[0].children[3].children[2].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff4 && showTraitsDiff1">{{JDReturn[0].children[0].children[3].children[3].name}}, {{CLReturn[0].children[0].children[3].children[3].percentage - JDReturn[0].children[0].children[3].children[3].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff4 && showTraitsDiff1">{{JDReturn[0].children[0].children[3].children[4].name}}, {{CLReturn[0].children[0].children[3].children[4].percentage - JDReturn[0].children[0].children[3].children[4].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff4 && showTraitsDiff1">{{JDReturn[0].children[0].children[3].children[5].name}}, {{CLReturn[0].children[0].children[3].children[5].percentage - JDReturn[0].children[0].children[3].children[5].percentage | abs | percentage : 2}}</h5>
+  <h4 ng-show="showTraitsDiff1" ng-click="showDetailsDiff5 = !showDetailsDiff5">{{JDReturn[0].children[0].children[4].name}}, {{CLReturn[0].children[0].children[4].percentage - JDReturn[0].children[0].children[4].percentage | abs | percentage : 2}}</h4>
+  <h5 ng-show="showDetailsDiff5 && showTraitsDiff1">{{JDReturn[0].children[0].children[4].children[0].name}}, {{CLReturn[0].children[0].children[4].children[0].percentage - JDReturn[0].children[0].children[4].children[0].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff5 && showTraitsDiff1">{{JDReturn[0].children[0].children[4].children[1].name}}, {{CLReturn[0].children[0].children[4].children[1].percentage - JDReturn[0].children[0].children[4].children[1].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff5 && showTraitsDiff1">{{JDReturn[0].children[0].children[4].children[2].name}}, {{CLReturn[0].children[0].children[4].children[2].percentage - JDReturn[0].children[0].children[4].children[2].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff5 && showTraitsDiff1">{{JDReturn[0].children[0].children[4].children[3].name}}, {{CLReturn[0].children[0].children[4].children[3].percentage - JDReturn[0].children[0].children[4].children[3].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff5 && showTraitsDiff1">{{JDReturn[0].children[0].children[4].children[4].name}}, {{CLReturn[0].children[0].children[4].children[4].percentage - JDReturn[0].children[0].children[4].children[4].percentage | abs | percentage : 2}}</h5>
+  <h5 ng-show="showDetailsDiff5 && showTraitsDiff1">{{JDReturn[0].children[0].children[4].children[5].name}}, {{CLReturn[0].children[0].children[4].children[5].percentage - JDReturn[0].children[0].children[4].children[5].percentage | abs | percentage : 2}}</h5>
+  <h2 ng-click="showTraitsDiff2 = !showTraitsDiff2">{{JDReturn[1].name}}</h2>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[0].name}}, {{CLReturn[1].children[0].children[0].percentage - JDReturn[1].children[0].children[0].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[1].name}}, {{CLReturn[1].children[0].children[1].percentage - JDReturn[1].children[0].children[1].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[2].name}}, {{CLReturn[1].children[0].children[2].percentage - JDReturn[1].children[0].children[2].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[3].name}}, {{CLReturn[1].children[0].children[3].percentage - JDReturn[1].children[0].children[3].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[4].name}}, {{CLReturn[1].children[0].children[4].percentage - JDReturn[1].children[0].children[4].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[5].name}}, {{CLReturn[1].children[0].children[5].percentage - JDReturn[1].children[0].children[5].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[6].name}}, {{CLReturn[1].children[0].children[6].percentage - JDReturn[1].children[0].children[6].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[7].name}}, {{CLReturn[1].children[0].children[7].percentage - JDReturn[1].children[0].children[7].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[8].name}}, {{CLReturn[1].children[0].children[8].percentage - JDReturn[1].children[0].children[8].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[9].name}}, {{CLReturn[1].children[0].children[9].percentage - JDReturn[1].children[0].children[9].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[10].name}}, {{CLReturn[1].children[0].children[10].percentage - JDReturn[1].children[0].children[10].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff2">{{JDReturn[1].children[0].children[11].name}}, {{CLReturn[1].children[0].children[11].percentage - JDReturn[1].children[0].children[11].percentage | abs | percentage : 2}}</h4>
+  <h2 ng-click="showTraitsDiff3 = !showTraitsDiff3">{{JDReturn[2].name}}</h2>
+  <h4 ng-show="showTraitsDiff3">{{JDReturn[2].children[0].children[0].name}}, {{CLReturn[2].children[0].children[0].percentage - JDReturn[2].children[0].children[0].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff3">{{JDReturn[2].children[0].children[1].name}}, {{CLReturn[2].children[0].children[1].percentage - JDReturn[2].children[0].children[1].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff3">{{JDReturn[2].children[0].children[2].name}}, {{CLReturn[2].children[0].children[2].percentage - JDReturn[2].children[0].children[2].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff3">{{JDReturn[2].children[0].children[3].name}}, {{CLReturn[2].children[0].children[3].percentage - JDReturn[2].children[0].children[3].percentage | abs | percentage : 2}}</h4>
+  <h4 ng-show="showTraitsDiff3">{{JDReturn[2].children[0].children[4].name}}, {{CLReturn[2].children[0].children[4].percentage - JDReturn[2].children[0].children[4].percentage | abs | percentage : 2}}</h4>
+
+</div>
+
+<div class="coverletter">
+  <textarea name="text" id="" rows="8" cols="40" ng-model="CLData"></textarea>
+  <textarea name="" id="" rows="8" cols="40" ng-show="CLMessageModified" >{{CLMessageModified}}</textarea>
+    <input type="submit" name="" id="" value="submit" ng-click="getDataCL(CLData)"/>
+    <div ng-repeat="category in CLReturn">
+      <h2 ng-click="showTraits = !showTraits">{{category.name}}</h2>
+      <div ng-repeat="personality in category.children">
+        <div ng-repeat="traits in personality.children">
+          <h4 ng-show="showTraits" ng-click="showDetails = !showDetails">{{traits.name}}, {{traits.percentage | percentage:2}}</h4>
+          <div ng-repeat="details in traits.children">
+            <h5 ng-show="showDetails && showTraits">{{details.name}}, {{details.percentage | percentage:2}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div ng-repeat="verb in verbs">
+  <h4>{{verb}}</h4>
+</div>

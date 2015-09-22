@@ -1,0 +1,27 @@
+
+<button ng-click="logout()">Logout</button>
+
+<aside class="sidebar">
+  <a href="#">apply for this job</a>
+  <a href="#">visit company website</a>
+  <a href="#">add to job tracker</a>
+</aside>
+
+<div class="container">
+  <img class="logo" src="{{job.company.logo}}" alt="" />
+  <div class="headline">
+    <header>
+      <h2>{{job.listing.company.name}}</h2>
+      <p>{{job.company.tagline}}</p>
+    </header>
+  </div>
+
+  <section>
+    <p>Job Description: {{job.listing.title}}</p>
+    <div id="job-descript">
+    </div>
+    <div id="how-apply">
+    </div>
+  </section>
+
+</div>
