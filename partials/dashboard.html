@@ -1,2 +1,13 @@
 <h2>{{message}}</h2>
-<h3>test</h3>
+
+<table>
+<tr ng-repeat="job in jobs">
+    <td><img src="{{job.data.company.logo}}" alt="" /></td>
+    <td>
+      <h3><a href="/#/jobs/{{job.data.listing.id}}">{{job.data.listing.title}}</a></h3>
+      <p><span class="bold">{{job.data.listing.company.name}}</span> {{job.data.listing.company.tagline}}</p></td>
+    <td><p>{{job.data.listing.company.location.city}}</p></td>
+    <td><p>{{job.data.listing.type.name}}</p></td>
+    <td><a href="" ng-click="remove(job)">Remove</a></td>
+</tr>
+</table>

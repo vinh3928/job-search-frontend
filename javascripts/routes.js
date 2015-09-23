@@ -11,7 +11,8 @@ app.config(["$routeProvider", function($routeProvider) {
     })
     .when("/dashboard", {
       templateUrl: "partials/dashboard.html",
-      controller: "DashboardController"
+      controller: "DashboardController",
+      resolve: {user: resolveUser}
     })
     .when("/jobs", {
       templateUrl: "partials/jobs.html",
